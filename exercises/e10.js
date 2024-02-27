@@ -5,7 +5,15 @@
 
 export function getClientsWithLetterInName(array, letter) {
   // Your code goes here...
-
+  let arrNames = [];
+  for (let item of array) {
+    for (let vowel of item) {
+      if (vowel.includes(letter)) {
+        arrNames.push(item);
+      }
+    }
+  }
+  return arrNames;
 }
 
 // === TEST YOURSELF ===

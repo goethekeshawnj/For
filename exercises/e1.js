@@ -5,6 +5,12 @@
 
 export function getFirstTenNumbers() {
   // Your code goes here...
+  let arr = [i];
+      for(var i = 0; i<10; i++)
+        {
+             arr.push(i+1);
+        }
+console.log(arr)
 
 }
 
