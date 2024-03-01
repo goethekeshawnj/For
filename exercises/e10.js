@@ -7,9 +7,10 @@ export function getClientsWithLetterInName(array, letter) {
   // Your code goes here...
   let arrNames = [];
   for (let item of array) {
-    for (let vowel of item) {
-      if (vowel.includes(letter)) {
-        arrNames.push(item);
+    for (let vowel of item.name) {
+      if (vowel.toLowerCase() === letter.toLowerCase()) {
+        arrNames.push(item.name);
+        break;
       }
     }
   }

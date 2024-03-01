@@ -4,9 +4,30 @@
 // Array example: bankAccounts in /data/data.js
 // getAllWithdrawals(bankAccounts) => [3432, 0, 43242.34, 0, 23432]
 
-export function getAllWithdrawals(array) {
-  // Your code goes here...
+import { bankAccounts } from "../data/data";
 
+export function getAllWithdrawals(array) {
+    // Your code goes here...
+    let sum;
+    let arrayOfSums = [];
+
+    for (let account of array) {
+        sum = 0;
+
+        console.log(account.withdrawals !== undefined);
+        if (account.withdrawals) {
+            for (let withdrawal of account.withdrawals) {
+                sum += withdrawal;
+            }
+            arrayOfSums.push(sum);
+        } else {
+            sum += 0;
+            arrayOfSums.push(sum);
+        }
+    }
+
+    console.log(arrayOfSums);
+    return arrayOfSums;
 }
 
 // === TEST YOURSELF ===
