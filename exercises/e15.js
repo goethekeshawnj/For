@@ -6,9 +6,12 @@
 export function concatArrays(arr1, arr2) {
     // Your code goes here...
     let arr3 = [];
-
-    arr3 = arr1.concat(arr2);
-    console.log(arr3);
+    for (let char of arr1) {
+        arr3.push(char);
+    }
+    for (let char of arr2) {
+        arr3.push(char);
+    }
     return arr3;
 }
 

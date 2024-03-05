@@ -4,52 +4,45 @@
 // separateNamesWithAFromRest(["jon", "alice", "andrew", "mark", "jimmy"]) -> [["alice", "andrew", "mark"], ["jon", "jimmy"]]
 // NOTE: You MUST use double/nested FOR loop to solve this exercise. The array.includes() method is NOT allowed.
 
-function doesEqualA(array) {
-    for (let i = 0; i < array.length; i++) {
-        if (array[i] === "a") {
-            return true;
-        }
-    }
-    return false;
-}
+// function doesEqualA(array) {
+//     for (let i = 0; i < array.length; i++) {
+//         if (array[i] === "a") {
+//             return true;
+//         }
+//     }
+//     return false;
+// }
 
 export function separateNamesWithAFromRest(array) {
-    // Your code goes here...
     let nameWithA = [];
     let nameWithoutA = [];
     // let answer = [];
     // let nameWithoutA = [];
 
     // for (let i = 0; i < array.length; i++) {
-    //     let name = array[i];
-    //     for (let j = 0; j < name[j].length; j++) {
-    //         console.log(name[j]);
-    //         if (name[j]== "a") {
-    //             nameWithA.push(name);
-    //         } else {
-    //             nameWithoutA.push(name);
+    //     for (let j = 0; j < array[i].length; j++) {
+    //         if (array[j].toLowerCase() == "a") {
+    //             nameWithA.push(i);
+    //         } else if (j !== "a") {
+    //             nameWithoutA.push(i);
     //         }
     //     }
     // }
 
-    // name[i] == "A" !== "A"
     for (let name of array) {
-        if (doesEqualA(name) == true) {
-            nameWithA.push(name);
-        } else {
-            nameWithoutA.push(name);
+        for (let letter of name) {
+            console.log(nameWithoutA);
+
+            if (letter.toLowerCase() == "a") {
+                nameWithA.push(name);
+            } else if (letter.toLowerCase() !== "a") {
+                nameWithoutA.push(name);
+            }
         }
     }
 
-    // if (!name.includes("a"))
-    let ares = [nameWithA, nameWithoutA];
+    let ares = [[nameWithA], [nameWithoutA]];
     return ares;
-    // if ((name = namestored)) {
-    //     nameWithoutA.push(name);
-    // }
-
-    // console.log(nameWithoutA);
-    // return [nameWithA];
 }
 
 // === TEST YOURSELF ===

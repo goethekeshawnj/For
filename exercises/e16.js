@@ -7,12 +7,14 @@
 export function flatArrays(array) {
     // Your code goes here...
     let array2 = [];
-    // for (let i = 1; i < array.length; i++) {
-    array2 = [array];
-    // }
+    for (let char of array) {
+        for (let pos of char) {
+            array2.push(pos);
+        }
+    }
 
-    console.log(array2.flat(2));
-    return array2.flat(2);
+    console.log(array2);
+    return array2;
 }
 
 // === TEST YOURSELF ===

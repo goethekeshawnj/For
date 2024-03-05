@@ -6,9 +6,17 @@
 
 export function doesArrayInclude(array, value) {
     // Your code goes here...
-    let isValuetrue = array.includes(value);
-    console.log(isValuetrue);
-    return isValuetrue;
+    let device = false;
+    for (let i = 0; i < array.length; i++) {
+        if (array[i] == value) {
+            return (device = true);
+        }
+    }
+    if (device) {
+        return true;
+    } else {
+        return false;
+    }
 }
 
 // === TEST YOURSELF ===

@@ -5,10 +5,15 @@
 // NOTE: You can NOT use the array.join(), array.toString(), and array.replace() methods in your code
 
 export function joinToString(array, separator) {
-    let joints = array;
-    let jointsNew = joints.join(separator);
-    console.log(joints, jointsNew);
-    return jointsNew;
+    let concatin = "";
+    for (let i = 0; i < array.length; i++) {
+        if (i == array.length - 1) {
+            concatin += array[i];
+        } else {
+            concatin += array[i] + separator;
+        }
+    }
+    return concatin;
 }
 
 // === TEST YOURSELF ===
